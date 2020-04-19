@@ -20,18 +20,4 @@ func TestRepeat(t *testing.T) {
 		assertCorrectMessage(t, got, want, numbers)
 	})
 
-	t.Run("collection of any size", func(t *testing.T) {
-		numbers := []int{1, 2, 3}
-
-		got := Sum(numbers)
-		want := 6
-
-		assertCorrectMessage(t, got, want, numbers)
-	})
 }
-
-// func BenchmarkRepeat(b *testing.B) {
-//     for i := 0; i < b.N; i++ {
-//         Repeat("a", 5)
-//     }
-// }
