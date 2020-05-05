@@ -34,7 +34,7 @@ func CheckWebsites(wc WebsiteChecker, urls []string) map[string]bool {
 func MyWebsiteChecker(w string) bool {
 	rand.Seed(time.Now().UnixNano())
 	wait_second := rand.Int31n(10)
-	fmt.Println("Wait %d seconds, %s", wait_second, w)
+	fmt.Printf("Wait %d seconds, %v\n", wait_second, w)
 	time.Sleep(time.Duration(wait_second) * time.Second)
 	return true
 }
