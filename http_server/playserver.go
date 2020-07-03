@@ -11,8 +11,9 @@ type PlayerStore interface {
 }
 
 type PlayerServer struct {
-	store PlayerStore
-	http.Handler
+	store        PlayerStore
+	http.Handler // Golang的嵌入特性,使PlayServer具有http.Handler的能力，
+	// 在下面的NewPlayerServer中通过 http.NewServeMux来填充PlayServer.Handler,因为 http.NewServeMux具有ServeHTTP方法
 }
 
 func NewPlayerServer(store PlayerStore) *PlayerServer {
